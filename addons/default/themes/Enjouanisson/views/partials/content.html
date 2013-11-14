@@ -1,0 +1,12 @@
+<div id="content" class="row">
+	<aside class="large-3 columns">
+		{{ theme:partial name="sidebar" }}
+	</aside>
+	<div class="large-9 columns" >
+		{{ if page:is_home }}
+			{{ theme:partial name="content_home" }} 
+		{{ else }}
+			{{ theme:partial name="content_default" }} 
+		{{ endif }}
+	</div>
+</div>

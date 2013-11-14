@@ -1,0 +1,19 @@
+{{ if page:is_home }}
+	{{ theme:partial name="sidebar_home" }} 
+{{ endif }}
+{{ if { url:segments segment="1" } == "products" }}
+	{{ theme:partial name="sidebar_products" }}
+{{ endif }}
+{{ if { url:segments segment="1" } == "recipes" }}
+	{{ theme:partial name="sidebar_recipes" }}
+{{ endif }}
+{{ if { url:segments segment="1" } == "articles" }}
+	{{ theme:partial name="sidebar_articles" }}
+{{ endif }}
+{{ if { url:segments segment="1" } == "gallery" }}
+	{{ theme:partial name="sidebar_gallery" }}
+{{ endif }}
+{{ if { url:segments segment="1" } == "contact_us" }}
+	{{ theme:partial name="sidebar_contact_us" }}
+{{ endif }}
+{{ theme:partial name="sidebar_common" }}

@@ -1,0 +1,19 @@
+		<article class="row">
+			{{ template:body }}
+		</article>
+		<div class="row">
+			<section class="large-4 columns">
+				<h2>Latest News</h2>
+			</section>
+			<section class="large-4 columns">
+				<h2>Featured Recipe</h2>
+			</section>
+			<section class="large-4 columns">
+				<h2>Recent Articles</h2>
+				{{ widgets:instance id="18"}}
+			</section>
+		</div>
+		<div class="row">
+			<h2>Our Products</h2>
+				{{ widgets:area slug="homepage-products" }}
+		</div>

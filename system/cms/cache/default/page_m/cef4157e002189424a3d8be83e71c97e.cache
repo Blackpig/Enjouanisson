@@ -1,0 +1,9 @@
+a:4:{s:16:"__cache_contents";a:1:{i:0;a:10:{s:2:"id";s:1:"1";s:7:"created";s:19:"2013-08-09 14:35:49";s:7:"updated";s:19:"2013-10-23 18:22:29";s:10:"created_by";s:1:"1";s:14:"ordering_count";N;s:4:"body";s:245:"<p>&nbsp;</p>
+
+<h1>{{ title }}</h1>
+<br />
+Welcome to our homepage. We have not quite finished setting up our website yet, but please add us to your bookmarks and come back soon.<br />
+<br />
+{{ widgets:instance id=&quot;6&quot;}}
+<p>&nbsp;</p>
+";s:19:"created_by||user_id";s:1:"1";s:17:"created_by||email";s:18:"stuart@blackpig.eu";s:20:"created_by||username";s:8:"BlackPig";s:24:"created_by||display_name";s:16:"Stuart Hallewell";}}s:15:"__cache_created";i:1383322995;s:20:"__cache_dependencies";a:0:{}s:15:"__cache_expires";i:1383331995;}

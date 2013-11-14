@@ -1,0 +1,26 @@
+body {
+	background-color: #9ba896;
+}
+
+header {
+	background-color: #000;
+	border-bottom: 2px solid #cc2914;
+}
+
+#content {
+	background-color: #fff;
+}
+
+#logo {
+	display: block;
+	height: 256px;
+	margin: 10px auto;
+}
+
+footer {
+	background-color: #000;
+}
+
+nav#main{
+	background-color: #1b2d47;
+}
