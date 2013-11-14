@@ -1,3 +1,4 @@
+<h1>Recipes - {{ tag }}</h1>
 {{ if posts }}
 
 	{{ posts }}

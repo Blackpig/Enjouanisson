@@ -315,7 +315,7 @@ class Recipes extends Public_Controller
 			->set_stream($this->stream->stream_slug, $this->stream->stream_namespace)
 			->set('posts', $posts['entries'])
 			->set('tag', $tag)
-			->build('posts');
+			->build('tagged');
 	}
 
 	/**

@@ -5,7 +5,7 @@
 		<div class="row ">
 			<div class="large-7 columns">
 				<figure>
-				{{ image:img }}
+					<a href="{{ photo:image }}" class="fancybox"><img src="{{ photo:image }}" alt="{{title}}"/></a>
 					<figcaption>
 					Image: {{ image_credit }}
 					</figcaption>
