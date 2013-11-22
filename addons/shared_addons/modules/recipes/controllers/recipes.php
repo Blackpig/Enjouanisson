@@ -55,15 +55,12 @@ class Recipes extends Public_Controller
 				AND is_active='1' AND entry_key='recipes:post' AND entry_plural='recipes:posts'
 				AND entry_id=".$this->db->protect_identifiers('recipes.id', true).") as `comment_count`";
 
-		// Get the latest recipes posts
+		// Get the latest featured recipe 
 		$posts = $this->streams->entries->get_entries(array(
 			'stream'		=> 'recipes',
 			'namespace'		=> 'recipess',
-			'limit'			=> Settings::get('records_per_page'),
-			'where'			=> "`status` = 'live'",
-			'paginate'		=> 'yes',
-			'pag_base'		=> site_url('article/page'),
-			'pag_segment'   => 3
+			'limit'			=> 1,
+			'where'			=> "`status` = 'live' AND `home_page_featured` = 'Yes'"
 		));
 
 		// Process posts
@@ -75,10 +72,6 @@ class Recipes extends Public_Controller
 		// Set meta description based on post titles
 		$meta = $this->_posts_metadata($posts['entries']);
 
-		$data = array(
-			'pagination' => $posts['pagination'],
-			'posts' => $posts['entries']
-		);
 
 		$this->template
 			->title($this->module_details['name'])
@@ -91,7 +84,6 @@ class Recipes extends Public_Controller
 			->set_metadata('keywords', $meta['keywords'])
 			->set_stream($this->stream->stream_slug, $this->stream->stream_namespace)
 			->set('posts', $posts['entries'])
-			->set('pagination', $posts['pagination'])
 			->build('posts');
 	}
 
@@ -345,7 +337,7 @@ class Recipes extends Public_Controller
 		$post['keywords_arr'] = $keywords_arr;
 
 		// Full URL for convenience.
-		$post['url'] = site_url('articles/'.$post['slug']);
+		$post['url'] = site_url('recipes/'.$post['slug']);
 	
 		// What is the preview? If there is a field called intro,
 		// we will use that, otherwise we will cut down the recipes post itself.

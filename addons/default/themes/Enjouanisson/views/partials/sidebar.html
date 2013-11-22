@@ -1,6 +1,9 @@
 {{ if page:is_home }}
 	{{ theme:partial name="sidebar_home" }} 
 {{ endif }}
+{{ if { url:segments segment="1" } == "about-us" }}
+	{{ theme:partial name="sidebar_about_us" }}
+{{ endif }}
 {{ if { url:segments segment="1" } == "products" }}
 	{{ theme:partial name="sidebar_products" }}
 {{ endif }}

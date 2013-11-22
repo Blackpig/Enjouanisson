@@ -34,10 +34,13 @@ h1#logo a {
 	overflow: hidden;
 }
 
+label {
+	color: #b0acb0;
+}
+
 input, textarea {
 	background: #000 !important;
 	border: 1px solid #b0acb0 !important;
-	border-radius: 3px !important;
 	padding: 2px !important;
 	color: #b0acb0  !important;
 	font-size: 0.8em !important;
@@ -62,6 +65,14 @@ input[type="submit"]:hover {
 	font-weight: bold;
 }
 
+.error {
+	font-size: 0.7em;
+	background-color: #b0acb0;
+	border: 1px solid #b0acb0;
+	color: #000;
+	width: 100%;
+}
+
 h1#logo a span {
 	display: none;
 }
@@ -81,7 +92,7 @@ h3 {
 h4 {
 	font-size: 0.8em;
 	font-weight: bold;
-	color: #fff;
+	color: #fbfbec;
 }
 
 p {
@@ -142,9 +153,23 @@ nav ul li {
 figure img {
 	margin: 20px 0 5px 0;
 }
+
+figure img.top {
+	margin-top: 0;
+	vertical-align: top;
+}
+
 figcaption {
 	font-size: 0.7em;
 	text-align:right;
+}
+
+img.breathe {
+	margin-bottom: 15px;
+}
+
+img.breathe_r {
+	margin-right: 15px;
 }
 
 .collapse-left {
@@ -327,20 +352,24 @@ figcaption {
 	display: block;
 }
 
-ul.link_list  {
+ul.link_list, ul.event_list  {
 	margin: 0;
 	list-style: none;
 	font-size: 0.85em;
 }
 
-ul.link_list li {
+ul.link_list li{
 	background: url(../img/arrow.gif) no-repeat 0% 10px;
 	padding: 0 0 0 20px;
 	line-height: 2.0em;
 }
 
-ul.link_list li a {
-	/*text-decoration: underline;*/
+ul.event_list li {
+	line-height: 2.0em;
+}
+
+ul.event_list em.past {
+	text-decoration: line-through;
 }
 
 article.blog {
@@ -361,6 +390,38 @@ article .meta {
 
 article .meta span {
 	color: #fbfbec;
+}
+
+article.post {
+	margin-bottom: 20px !important;
+}
+
+dl {
+	font-size: 0.8em;
+ 	width:100%;
+ 	overflow:hidden;
+}
+
+dl dd, dl dt {
+	margin-bottom: 0;
+}
+
+dt {
+ 	float:left;
+ 	width:8%; 
+}
+
+dd {
+ float:left;
+ width:92%; 
+}
+
+.contact-details dt {
+	width: 30%;
+}
+
+.contact-details dd {
+	width: 70%;
 }
 
 #ingredients ul {

@@ -1,50 +1,31 @@
 <h1>Recipes - {{ tag }}</h1>
 {{ if posts }}
 
-	{{ posts }}
+{{ posts }}
 
-		<div class="post">
+<Article class="large-12 post">
 
-			<h3><a href="{{ url }}">{{ title }}</a></h3>
+	<h2><a href="{{ url }}">{{ title }}</a></h2>
+	<div class="row">
+	<div class="large-3 columns">
+		<figure>
+			<a href="{{ photo:image }}" class="fancybox"><img src="{{ photo:image }}" alt="{{title}}" class="top"/></a>
+			<figcaption>
+				Image: {{ image_credit }}
+			</figcaption>
+		</figure>
+	</div>
+	<div class="large-9 columns">
+		<p>{{ intro }}</p>
+		<a href="{{ url }}" class="more">Read more</a>
+	</div>
+</div>
+</article>
 
-			<div class="meta">
-
-			<div class="date">
-				{{ helper:lang line="recipes:posted_label" }}
-				<span>{{ helper:date timestamp=created_on }}</span>
-			</div>
-
-			{{ if category }}
-			<div class="category">
-				{{ helper:lang line="recipes:category_label" }}
-				<span><a href="{{ url:site }}recipes/category/{{ category:slug }}">{{ category:title }}</a></span>
-			</div>
-			{{ endif }}
-
-			{{ if keywords }}
-			<div class="keywords">
-				{{ keywords }}
-					<span><a href="{{ url:site }}recipes/tagged/{{ keyword }}">{{ keyword }}</a></span>
-				{{ /keywords }}
-			</div>
-			{{ endif }}
-
-			</div>
-
-			<div class="preview">
-			{{ preview }}
-			</div>
-
-			<p><a href="{{ url }}">{{ helper:lang line="recipes:read_more_label" }}</a></p>
-
-		</div>
-
-	{{ /posts }}
-
-	{{ pagination }}
+{{ /posts }}
 
 {{ else }}
-	
-	{{ helper:lang line="recipes:currently_no_posts" }}
+
+{{ helper:lang line="recipes:currently_no_posts" }}
 
 {{ endif }}

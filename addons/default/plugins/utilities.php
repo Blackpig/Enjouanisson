@@ -87,7 +87,7 @@ return $info;
 	{ 
 		$text = $this->attribute('text');
 		$type = $this->attribute('type','word');		
-		$limit = $this->attribute('length',150);
+		$limit = $this->attribute('limit',150);
 		$strip_tags = $this->attribute('strip_tags','true');
 		$add_ellipsis = $this->attribute('add_ellipsis','true');
 

@@ -4,13 +4,25 @@
 
 	{{ posts }}
 
-		 <article class="blog large-12">
-			<h2>{{ title }}</h2>
-			<p>Published on {{ helper:date timestamp=created_on }}</p>
-			<p>{{ utilities:truncate text="{{ body }}" type="word" limit="250" }}</p>
+	<Article class="large-12 post">
 
-			<a href="{{ url }}" class="more">Read more</a>
-		</article>
+	<h2><a href="{{ url }}">{{ title }}</a></h2>
+	<p>Published on {{ helper:date timestamp=created_on }}</p>
+	<div class="row">
+	<div class="large-3 columns">
+		<figure>
+			<a href="{{ photo:image }}" class="fancybox"><img src="{{ photo:image }}" alt="{{title}}" class="top"/></a>
+			<figcaption>
+				Image: {{ image_credit }}
+			</figcaption>
+		</figure>
+	</div>
+	<div class="large-9 columns">
+		<p>{{ preview }}</p>
+		<a href="{{ url }}" class="more">Read more</a>
+	</div>
+</div>
+</article>
 
 	{{ /posts }}
 

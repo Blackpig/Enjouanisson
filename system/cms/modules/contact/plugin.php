@@ -509,7 +509,7 @@ class Plugin_Contact extends Plugin
 													 );
 			}
 		}
-	
+
 		$output	 = form_open_multipart($action, 'class="contact-form"').PHP_EOL;
 		$output	.= form_input('d0ntf1llth1s1n', ' ', 'class="default-form" style="display:none"');
 		$output	.= $this->parser->parse_string($this->content(), str_replace('{{', '{ {', $parse_data), true).PHP_EOL;

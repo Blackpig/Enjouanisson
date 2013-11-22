@@ -2,54 +2,39 @@
 {{ pages:display slug="recipes" }}
     
     {{ custom_fields }}
-        <p>{{ body }}" </p>
+        <p>{{ body }} </p>
     {{ /custom_fields }}
 
 {{ /pages:display }}
 
+<h2>Featured Recipe</h2>
 {{ if posts }}
 
 	{{ posts }}
 
-		<div class="post">
+		<Article class="post">
 
-			<h3><a href="{{ url }}">{{ title }}</a></h3>
+			<h2><a href="{{ url }}">{{ title }}</a></h2>
 
-			<div class="meta">
-
-			<div class="date">
-				{{ helper:lang line="recipes:posted_label" }}
-				<span>{{ helper:date timestamp=created_on }}</span>
+			<div class="large-4 columns">
+				<figure>
+					<a href="{{ photo:image }}" class="fancybox"><img src="{{ photo:image }}" alt="{{title}}"/></a>
+					<figcaption>
+					Image: {{ image_credit }}
+					</figcaption>
+				</figure>
+			</div>
+			<div class="large-8 columns">
+					<p>{{ intro }}</p>
+					<a href="{{ url }}" class="more">Read more</a>
 			</div>
 
-			{{ if category }}
-			<div class="category">
-				{{ helper:lang line="recipes:category_label" }}
-				<span><a href="{{ url:site }}recipes/category/{{ category:slug }}">{{ category:title }}</a></span>
-			</div>
-			{{ endif }}
-
-			{{ if keywords }}
-			<div class="keywords">
-				{{ keywords }}
-					<span><a href="{{ url:site }}recipes/tagged/{{ keyword }}">{{ keyword }}</a></span>
-				{{ /keywords }}
-			</div>
-			{{ endif }}
-
-			</div>
-
-			<div class="preview">
-			{{ preview }}
-			</div>
-
-			<p><a href="{{ url }}">{{ helper:lang line="recipes:read_more_label" }}</a></p>
+			
 
 		</div>
+	</article>
 
 	{{ /posts }}
-
-	{{ pagination }}
 
 {{ else }}
 	

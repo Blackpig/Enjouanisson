@@ -1,0 +1,52 @@
+		<div class="row">
+			<article class="large-12 columns">
+				<h2>Who we are</h2>
+				{{ pages:display slug="who-we-are" }}
+					{{ custom_fields }}
+       					<p>{{ if feature_image:id  != "" }}
+							<a href="{{ feature_image:image }}" class="fancybox"><img src="{{ feature_image:image }}" alt="{{ title }}" width="30%" class="left breathe breathe_r" /></a>
+							{{ endif }}
+							{{ utilities:truncate text="{{ body }}" limit="500"}}</p>
+    				{{ /custom_fields }}
+    					<a href="{{ pages:url id='{{ id }}' }}" class="more">Read more</a>    				
+				{{ /pages:display }}
+			</article>
+		</div>
+		<div class="row">
+			<section class="large-4 columns">
+				<h2>Our Ethos</h2>
+				{{ pages:display slug="our-ethos" }}
+    				{{ custom_fields }}
+    					{{ if feature_image:id  != "" }}
+							<a href="{{ feature_image:image }}" class="fancybox breathe"><img src="{{ feature_image:image }}" alt="{{title}}" class="left breathe" /></a>
+						{{ endif }}
+       					<p>{{ utilities:truncate text="{{ body }}" limit="100"}}</p>
+    				{{ /custom_fields }}
+    					<a href="{{ pages:url id='{{ id }}' }}" class="more">Read more</a>  
+				{{ /pages:display }}
+			</section>
+			<section class="large-4 columns">
+				<h2>The Gascon black Pig</h2>
+				{{ pages:display slug="the-gascon-black-pig" }}
+    				{{ custom_fields }}
+    					{{ if feature_image:id  != "" }}
+							<a href="{{ feature_image:image }}" class="fancybox breathe"><img src="{{ feature_image:image }}" alt="{{title}}" class="left breathe" /></a>
+						{{ endif }}
+       					<p>{{ utilities:truncate text="{{ body }}" limit="100"}}</p>
+    				{{ /custom_fields }}
+    					<a href="{{ pages:url id='{{ id }}' }}" class="more">Read more</a>  
+				{{ /pages:display }}
+			</section>
+			<section class="large-4 columns">
+				<h2>Organic certification</h2>
+				{{ pages:display slug="organic-certification" }}
+    				{{ custom_fields }}
+    					{{ if feature_image:id  != "" }}
+							<a href="{{ feature_image:image }}" class="fancybox breathe"><img src="{{ feature_image:image }}" alt="{{title}}" class="left breathe" /></a>
+						{{ endif }}
+       					<p>{{ utilities:truncate text="{{ body }}" limit="100"}}</p>
+    				{{ /custom_fields }}
+    					<a href="{{ pages:url id='{{ id }}' }}" class="more">Read more</a>  
+				{{ /pages:display }}
+			</section>
+		</div>
