@@ -209,6 +209,7 @@
     $lang['firesale:label_stock_order']                     = 'More stock ordered';
     $lang['firesale:label_stock_ended']                     = 'Discontinued';
     $lang['firesale:label_stock_unlimited']                 = 'Unlimited';
+    $lang['firesale:label_stock_taking_orders']             = 'Taking Orders Now';
 
     $lang['firesale:label_remove']                          = 'Remove';
     $lang['firesale:label_image']                           = 'Image';

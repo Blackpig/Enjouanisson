@@ -3,28 +3,43 @@
 	{{ if category.children > 0 }}
 	<h2>In This Section</h2>
 		{{ categories }}
-		{{ if {helper:looper identifier="idx" true_every="2" } == 0 }}
 			<div class="row">
-		{{ endif }}
-			<section class="large-6 columns product_category">
-				<a href="{{ firesale:url route="category" id=id }}" class="product_link"><img src="{{ images.0.path }}" alt="{{ title }}" class="left" /></a>
-				<h3><a href="{{ firesale:url route="category" id=id }}">{{ title }}</a></h3>
-				<p>{{ description }}</p>
-				<a href="{{ firesale:url route="category" id=id }}">&nbsp;</a>
-			</section>
-		{{ if { helper:looper identifier="idx" step="1" true_every="2" } == 0 }}
+				<section class="large-12 columns product_category">
+					<div class="row">
+		 				<div class="large-4 columns">
+		 				{{ if images == null }}
+							{{ theme:image file="awaiting_image.png" alt="No Image available" }}
+						{{ else }}
+							<a href="{{ images.0.path }}" class="fancybox"><img src="{{ images.0.path }}" alt="{{ title }}" class="left"  width="210"/></a>
+						{{ endif }}
+						</div>
+						<div class="large-8 columns">
+							<h3><a href="{{ firesale:url route="category" id=id }}">{{ title }}</a></h3>
+							<p>{{ description }}</p>
+							<a href="{{ firesale:url route="category" id=id }}">&nbsp;</a>
+						</div>
+					</div>
+				</section>
 			</div>
-	
-		{{ endif }}
 		{{ /categories }}
 	{{ else }}
 		{{ products }}
 		<div class="row">
 		 	<section class="large-12 columns product_category">
-				<a href="{{ firesale:url route="product" id=id }}" class="product_link"><img src="{{ images.0.path }}" alt="{{ title }}" class="left" /></a>
-				<h3>{{ title }}</h3>
-				<p>{{ description }}</p>
-				<a href="">&nbsp;</a>
+		 		<div class="row">
+		 			<div class="large-4 columns">
+		 				{{ if image == null }}
+							{{ theme:image file="awaiting_image.png" alt="No Image available" }}
+						{{ else }}
+							<a href="{{ images.0.path }}" class="fancybox"><img src="{{ images.0.path }}" alt="{{ title }}" class="left" width="210"/></a>
+						{{ endif }}
+					</div>
+					<div class="large-8 columns">
+						<h3>{{ title }}</h3>
+						<p>{{ description }}</p>
+						<p class="price">{{ price_formatted }} {{ attributes.0.value}}</p>
+					</div>
+				</div>
 			</section>
 		</div>
 		{{ /products }}

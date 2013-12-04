@@ -1,17 +1,22 @@
 	<h1>Products</h1>
 	{{ widgets:area slug="products-intro" }}
 	{{ categories }}
-{{ if {utilities:looper identifier="idx" true_every="2" } == 1 }}
 	<div class="row">
-{{ endif }}
-		<section class="large-6 columns product_category">
-			<a href="{{ firesale:url route="category" id=id }}" class="product_link"><img src="{{ images.0.path }}" alt="{{ title }}" class="left" /></a>
-			<h3><a href="{{ firesale:url route="category" id=id }}">{{ title }}</a></h3>
-			<p>{{ description }}</p>
-			<a href="{{ firesale:url route="category" id=id }}">&nbsp;</a>
+		<section class="large-12 columns product_category">
+			<div class="row">
+		 		<div class="large-4 columns">
+					{{ if images == null }}
+						{{ theme:image file="awaiting_image.png" alt="No Image available" }}
+					{{ else }}
+						<a href="{{ images.0.path }}" class="fancybox"><img src="{{ images.0.path }}" alt="{{ title }}" class="left"  width="210"/></a>
+					{{ endif }}
+				</div>
+				<div class="large-8 columns">						
+					<h3><a href="{{ firesale:url route="category" id=id }}">{{ title }}</a></h3>
+					<p>{{ description }}</p>
+					<a href="{{ firesale:url route="category" id=id }}">&nbsp;</a>
+				</div>
+			</div>
 		</section>
-{{ if { utilities:looper identifier="idx" step="1" true_every="2" } == 1 }}
-		</div>
-	
-{{ endif }}
+	</div>
 {{ /categories }}

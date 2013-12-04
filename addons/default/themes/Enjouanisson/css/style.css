@@ -106,6 +106,10 @@ p.leader {
 	font-weight: bold;
 }
 
+small {
+	font-size: 80%;
+}
+
 a {
 	color: #c7b473;
 }
@@ -139,6 +143,15 @@ a.more {
 
 a.more:hover {
 	color: #fff;
+}
+
+article ul, article ol {
+	font-size: 0.80em;
+	margin-left: 1.0em;
+}
+
+article ol li {
+	margin-bottom: 15px;
 }
 
 nav ul {
@@ -212,6 +225,12 @@ img.breathe_r {
 
 #top-links li a:hover {
 	text-decoration: underline;
+}
+
+img.bio {
+	position: absolute;
+	top: 30;
+	right: 100;
 }
 
 /* Override foundation styles for main menu*/
@@ -297,7 +316,6 @@ img.breathe_r {
 	padding-right:2.5em;
 	padding-left:0;
 	height: 100%;
-	background: url(../img/EU_Organic_Logo.png) no-repeat 50% 100%;
 
 }
 
@@ -432,15 +450,14 @@ dd {
 }
 
 section.product_list {
-	background: url(../img/bg_product_list.png) no-repeat  0% 100%;
-	background-size: contain;
+	/*background: url(../img/bg_product_list.png) no-repeat  0% 100%;
+	background-size: contain;*/
 	height: 170px;
 }
 
 section.product_list h3 {
 	width: 150px;
-	height: 163px;
-	line-height: 252px;
+	height: 41px;
 	text-decoration: none;
 }
 
@@ -472,16 +489,24 @@ section.product_category {
 	padding-bottom: 40px;
 }
 
-section.product_category img {
-	filter: url(filters.svg#desaturate); /* Firefox 3.5+ */
-    filter: gray; /* IE6-9 */
-    -webkit-filter: desaturate(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+section.product_category a img {
 	margin: 4px 24px 0 0;
+	filter: none;
+	-webkit-filter: grayscale(0%);
+	border: 1px solid #000;
 }
 
-section.product_category img:hover {
-	filter: none;
-	-webkit-filter: desaturate(0);
+section.product_category a img:hover {
+	border: 1px solid #fff;
+	/* grayscale image */
+	filter: url(filters.svg#desaturate); /* Firefox 3.5+ */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Google Chrome, Safari 6+ & Opera 15+ */
+    /*fade filte in */
+    -webkit-transition: 0.3s all ease-in;
+  	-o-transition: 0.3s all ease-in;
+  	-moz-transition: 0.3s all ease-in;
+  	transition: 0.3s all ease-in;
 }
 
 footer {

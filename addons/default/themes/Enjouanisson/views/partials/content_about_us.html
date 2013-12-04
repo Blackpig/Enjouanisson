@@ -6,7 +6,7 @@
        					<p>{{ if feature_image:id  != "" }}
 							<a href="{{ feature_image:image }}" class="fancybox"><img src="{{ feature_image:image }}" alt="{{ title }}" width="30%" class="left breathe breathe_r" /></a>
 							{{ endif }}
-							{{ utilities:truncate text="{{ body }}" limit="500"}}</p>
+							{{ utilities:truncate limit="180" strip_tags="0" text="{{ body }}" }}</p>
     				{{ /custom_fields }}
     					<a href="{{ pages:url id='{{ id }}' }}" class="more">Read more</a>    				
 				{{ /pages:display }}
@@ -20,7 +20,7 @@
     					{{ if feature_image:id  != "" }}
 							<a href="{{ feature_image:image }}" class="fancybox breathe"><img src="{{ feature_image:image }}" alt="{{title}}" class="left breathe" /></a>
 						{{ endif }}
-       					<p>{{ utilities:truncate text="{{ body }}" limit="100"}}</p>
+       					<p>{{ utilities:truncate limit="100" strip_tags="0" text="{{ body }}" }}</p>
     				{{ /custom_fields }}
     					<a href="{{ pages:url id='{{ id }}' }}" class="more">Read more</a>  
 				{{ /pages:display }}
@@ -32,7 +32,7 @@
     					{{ if feature_image:id  != "" }}
 							<a href="{{ feature_image:image }}" class="fancybox breathe"><img src="{{ feature_image:image }}" alt="{{title}}" class="left breathe" /></a>
 						{{ endif }}
-       					<p>{{ utilities:truncate text="{{ body }}" limit="100"}}</p>
+       					<p>{{ utilities:truncate limit="100" strip_tags="0" text="{{ body }}"}}</p>
     				{{ /custom_fields }}
     					<a href="{{ pages:url id='{{ id }}' }}" class="more">Read more</a>  
 				{{ /pages:display }}
@@ -44,7 +44,7 @@
     					{{ if feature_image:id  != "" }}
 							<a href="{{ feature_image:image }}" class="fancybox breathe"><img src="{{ feature_image:image }}" alt="{{title}}" class="left breathe" /></a>
 						{{ endif }}
-       					<p>{{ utilities:truncate text="{{ body }}" limit="100"}}</p>
+       					<p>{{ utilities:truncate limit="100" strip_tags="0" text="{{ body }}"}}</p>
     				{{ /custom_fields }}
     					<a href="{{ pages:url id='{{ id }}' }}" class="more">Read more</a>  
 				{{ /pages:display }}

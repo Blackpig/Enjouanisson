@@ -148,7 +148,7 @@ class Front_category extends Public_Controller
             // Loop and get products
                 foreach ($ids AS $id) {
                     $product                = $this->pyrocache->model('products_m', 'get_product', array($id['id']), $this->firesale->cache_time);
-                    $product['description'] = strip_tags($product['description']);
+                    $product['description'] = $product['description'];
                     $products[]             = $product;
                 }
 
