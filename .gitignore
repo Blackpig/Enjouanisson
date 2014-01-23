@@ -1,1 +1,4 @@
-/uploads
+system/cms/cache/
+system/cms/logs/
+.htaccess
+uploads/

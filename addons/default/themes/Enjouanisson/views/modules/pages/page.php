@@ -1,7 +1,8 @@
-<?php if ($page->slug == "about-us") { 
+<?php if ($page->slug == "about-us2") { 
+	echo "<h1>About Us</h1>";
 	echo $page->body ;
 } else { ?>
-<article class="large-12 columns">
+<article class="large-12">
 	<h1><?php echo $page->title ?></h1>
 	<?php if (!empty($page->feature_image)) { ?>
 	<figure>

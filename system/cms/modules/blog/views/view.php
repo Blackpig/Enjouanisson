@@ -1,4 +1,3 @@
-
 {{ post }}
 
 <div class="post">

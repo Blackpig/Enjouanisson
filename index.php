@@ -1,7 +1,7 @@
 <?php
 
 # If you have already installed then delete this
-if ( ! file_exists('system/cms/config/database.php'))
+/*if ( ! file_exists('system/cms/config/database.php'))
 {
 	// Make sure we've not already tried this
 	if (strpos($_SERVER['REQUEST_URI'], 'installer/'))
@@ -13,7 +13,7 @@ if ( ! file_exists('system/cms/config/database.php'))
 	// Otherwise go to installer
 	header('Location: '.rtrim($_SERVER['REQUEST_URI'], '/').'/installer/');
 	exit;
-}
+}*/
 
 /*
  *---------------------------------------------------------------
@@ -38,7 +38,7 @@ define('PYRO_DEVELOPMENT', 'development');
 define('PYRO_STAGING', 'staging');
 define('PYRO_PRODUCTION', 'production');
 
-define('ENVIRONMENT', (isset($_SERVER['PYRO_ENV']) ? $_SERVER['PYRO_ENV'] : PYRO_DEVELOPMENT));
+define('ENVIRONMENT', PYRO_DEVELOPMENT);
 
 /*
  *---------------------------------------------------------------
@@ -59,13 +59,13 @@ define('ENVIRONMENT', (isset($_SERVER['PYRO_ENV']) ? $_SERVER['PYRO_ENV'] : PYRO
 
 		case PYRO_STAGING:
 		case PYRO_PRODUCTION:
-			ini_set('display_errors', false);
+			ini_set('display_errors', true);
 		break;
 
 		default:
 			exit('The environment is not set correctly. ENVIRONMENT = '.ENVIRONMENT.'.');
 	}
-	
+	ini_set('display_errors', true);
 /*
 |---------------------------------------------------------------
 | DEFAULT INI SETTINGS

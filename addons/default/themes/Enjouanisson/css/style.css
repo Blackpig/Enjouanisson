@@ -1,6 +1,3 @@
-@import 'normalize.css';
-@import 'foundation.css';
-
 body {
 	background: #000 url(../img/body.jpg) no-repeat 50% 0%;
 	background-size: cover;
@@ -145,6 +142,77 @@ a.more:hover {
 	color: #fff;
 }
 
+dl {
+	font-size: 0.8em;
+ 	width:100%;
+ 	overflow:hidden;
+}
+
+dl dd, dl dt {
+	margin-bottom: 0;
+}
+
+dt {
+ 	float:left;
+ 	width:8%; 
+}
+
+dd {
+ float:left;
+ width:92%; 
+}
+
+.testimonials .orbit-container .orbit-timer {
+	display: none;
+}
+
+.testimonials ul {
+	list-style: none;
+}
+
+.testimonial {
+    margin: 0;
+    background: transparent;
+    padding: 10px 35px;
+    position: relative;
+    color: #faf9e9;
+    border: none;
+    font-style: italic;
+}
+
+.testimonial p {
+	line-height: 1.1em;
+	font-size: 0.9em;
+	color: #faf9e9;
+}
+
+.testimonial:before, .testimonial:after {
+    content: "\201C";
+    position: absolute;
+    font-size: 50px;
+    line-height: 1;
+    color: #faf9e9;
+    font-style: italic;
+}
+
+.testimonial:before {
+    top: 0;
+    left: 10px;
+}
+
+.testimonial:after {
+    content: "\201D";
+    right: 10px;
+    bottom: -0.3em;
+}
+
+
+.testimonial-author {
+    color: #fff;
+    text-align: right;
+    font-size: 0.8em;
+}
+
 article ul, article ol {
 	font-size: 0.80em;
 	margin-left: 1.0em;
@@ -174,15 +242,23 @@ figure img.top {
 
 figcaption {
 	font-size: 0.7em;
-	text-align:right;
+	text-align:left;
 }
 
 img.breathe {
 	margin-bottom: 15px;
 }
 
+img.breathe_t {
+	margin-top: 15px;
+}
+
 img.breathe_r {
 	margin-right: 15px;
+}
+
+img.breathe_l {
+	margin-left: 10px;
 }
 
 .collapse-left {
@@ -231,6 +307,12 @@ img.bio {
 	position: absolute;
 	top: 30;
 	right: 100;
+}
+
+a.lang {
+	position: absolute;
+	top: 25;
+	right: 177;
 }
 
 /* Override foundation styles for main menu*/
@@ -315,8 +397,7 @@ img.bio {
 #content aside {
 	padding-right:2.5em;
 	padding-left:0;
-	height: 100%;
-
+	min-height: 100%;
 }
 
 #content aside .widget {
@@ -384,10 +465,42 @@ ul.link_list li{
 
 ul.event_list li {
 	line-height: 2.0em;
+	clear: both;
+}
+
+ul.event_list em.date {
+	float: left;
+	text-align: center;
+	width: 45px;
+	margin: 0 0 3px 0 ;
+	font-size: 0.9em;
+}
+
+ul.event_list em.date span{
+	display: block;
+	font-size: 1.3em;
+	margin-top: -12px;
 }
 
 ul.event_list em.past {
 	text-decoration: line-through;
+}
+
+ul.event_list em.past>span {
+	text-decoration: line-through;
+}
+
+ul.event_list div.desc {
+	line-height: 2.0em;
+}
+
+
+#event_specs dt {
+ 	width:15%; 
+}
+
+#event_specs dd {
+ width:85%; 
 }
 
 article.blog {
@@ -412,26 +525,6 @@ article .meta span {
 
 article.post {
 	margin-bottom: 20px !important;
-}
-
-dl {
-	font-size: 0.8em;
- 	width:100%;
- 	overflow:hidden;
-}
-
-dl dd, dl dt {
-	margin-bottom: 0;
-}
-
-dt {
- 	float:left;
- 	width:8%; 
-}
-
-dd {
- float:left;
- width:92%; 
 }
 
 .contact-details dt {
@@ -517,4 +610,18 @@ footer {
 
 footer p {
 	line-height: 70px;
+}
+
+.orbit-container {
+	background-color: transparent;
+}
+
+.orbit-container .orbit-timer {
+	display: none;
+}
+
+.reveal-modal {
+	background: #000;
+	color: #fff;
+	border:; 1px solid #fff;
 }

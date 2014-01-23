@@ -72,7 +72,7 @@ class Widget_Featured_recipe extends Widgets
 			'namespace'		=> 'recipess',
 			'limit'			=> 1,
 			'where'			=> "`status` = 'live' AND `home_page_featured` = 'Yes'",
-			'order_by'		=> "`created",
+			'order_by'		=> "`created`",
 			'sort'			=> "desc"
 			));
 

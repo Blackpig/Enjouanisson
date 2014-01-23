@@ -40,7 +40,7 @@ $lang['blog:edit_title']                     = 'Edit post "%s"';
 $lang['blog:archive_title']                 = 'Archive';
 $lang['blog:posts_title']					= 'Posts';
 $lang['blog:rss_posts_title']				= 'Blog posts for %s';
-$lang['blog:blog_title']					= 'Blog';
+$lang['blog:blog_title']					= 'Articles';
 $lang['blog:list_title']					= 'List Posts';
 
 // messages

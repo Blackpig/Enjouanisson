@@ -16,7 +16,6 @@
 			wibble
 		{{ endif }}
 	</dl>
-	<a href="{{ url }}" class="more">Read more</a>
 </article>
 
 {{ /posts }}

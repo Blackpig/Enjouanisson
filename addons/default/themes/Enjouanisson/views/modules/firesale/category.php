@@ -10,6 +10,7 @@
 		 				{{ if images == null }}
 							{{ theme:image file="awaiting_image.png" alt="No Image available" }}
 						{{ else }}
+
 							<a href="{{ images.0.path }}" class="fancybox"><img src="{{ images.0.path }}" alt="{{ title }}" class="left"  width="210"/></a>
 						{{ endif }}
 						</div>
@@ -31,7 +32,7 @@
 		 				{{ if image == null }}
 							{{ theme:image file="awaiting_image.png" alt="No Image available" }}
 						{{ else }}
-							<a href="{{ images.0.path }}" class="fancybox"><img src="{{ images.0.path }}" alt="{{ title }}" class="left" width="210"/></a>
+							<a href="{{ images.0.path }}" class="fancybox"><img src="{{ url:base }}files/thumb/{{ image }}/0/210" alt="{{ title }}" class="left"/></a> 
 						{{ endif }}
 					</div>
 					<div class="large-8 columns">

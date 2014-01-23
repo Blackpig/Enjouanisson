@@ -20,12 +20,11 @@
 |	http://www.codeigniter.com/user_guide/general/routing.html
 */
 
-// public
-$route['(event)/(:num)/(:num)/(:any)']   = 'event/view/$4';
-$route['(event)/page(/:num)?']           = 'event/index$2';
-$route['(event)/rss/all.rss']            = 'rss/index';
-$route['(event)/rss/(:any).rss']         = 'rss/category/$2';
-
-// admin
-$route['event/admin/categories(/:any)?'] = 'admin_categories$1';
+$route['event/tagged/(:any)']   			= 'event/tagged/$1';
+$route['event/admin/categories(/:any)?'] 	= 'admin_categories$1';
 $route['event/admin/fields(/:any)?']		= 'admin_fields$1';
+$route['event/admin(/:any)']  			= 'admin$1';
+$route['event/(:any)']   					= 'event/view/$1';
+$route['event/page(/:num)?']           	= 'event/index$2';
+$route['event/rss/all.rss']            	= 'rss/index';
+$route['event/rss/(:any).rss']         	= 'rss/category/$1';

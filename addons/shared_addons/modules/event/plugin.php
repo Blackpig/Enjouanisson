@@ -18,7 +18,7 @@ class Plugin_Event extends Plugin
 	public $description = array(
 		'en' => 'A plugin to display information such as event categories and posts.',
             'fa' => 'یک پلاگین برای نمایش اطلاعاتی مانند مجموعه های بلاگ و پست ها',
-        'fr' => 'Un plugin permettant d\'afficher des informations comme les catégories et articles du event.'
+        'fr' => 'Un plugin permettant d\'afficher des informations comme les catégories et events du event.'
 	);
 
 	/**
@@ -33,7 +33,7 @@ class Plugin_Event extends Plugin
 			'posts' => array(
 				'description' => array(// a single sentence to explain the purpose of this method
 					'en' => 'Display event posts optionally filtering them by category.',
-                    'fr' => 'Permet d\'afficher des articles de event en les filtrants par catégorie.'
+                    'fr' => 'Permet d\'afficher des events de event en les filtrants par catégorie.'
 				),
 				'single' => false,// single tag or double tag (tag pair)
 				'double' => true,
@@ -103,7 +103,7 @@ class Plugin_Event extends Plugin
 			'count_posts' => array(
 				'description' => array(
 					'en' => 'Count event posts that meet the conditions specified.',
-                    'fr' => 'Permet de compter les articles de event qui remplissent certaines conditions spécifiées.'
+                    'fr' => 'Permet de compter les events de event qui remplissent certaines conditions spécifiées.'
 				),
 				'single' => true,
 				'double' => false,
@@ -133,7 +133,7 @@ class Plugin_Event extends Plugin
 			'tags' => array(
 				'description' => array(
 					'en' => 'Retrieve all tags that have been applied to event posts.',
-                    'fr' => 'Récupère la liste de tout les tags qui ont été utilisés dans les articles.'
+                    'fr' => 'Récupère la liste de tout les tags qui ont été utilisés dans les events.'
 				),
 				'single' => false,
 				'double' => true,
@@ -270,7 +270,7 @@ class Plugin_Event extends Plugin
 				$post['keywords_arr'] = $keywords_arr;
 
 				// Full URL for convenience.
-				$post['url'] = site_url('event/'.date('Y/m', $post['created_on']).'/'.$post['slug']);
+				$post['url'] = site_url('event/'.$post['slug']);
 			
 				// What is the preview? If there is a field called intro,
 				// we will use that, otherwise we will cut down the event post itself.

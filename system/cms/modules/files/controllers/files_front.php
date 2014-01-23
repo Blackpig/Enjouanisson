@@ -48,11 +48,11 @@ class Files_front extends Public_Controller
 		force_download($name , $data);
 	}
 
-	public function thumb($id = 0, $width = 100, $height = 100, $mode = null)
+	public function thumb($id = 0, $width = 200, $height = 200, $mode = null)
 	{
 		// is it a 15 char hash with no file extension or is it an old style numeric id with no file extension?
 		if ((strlen($id) === 15 and strpos($id, '.') === false) or (is_numeric($id) and strpos($id, '.') === false))
-		{
+		{ 
 			$file = $this->file_m->get($id);
 		}
 		
@@ -200,6 +200,7 @@ class Files_front extends Public_Controller
 				$this->image_lib->initialize($config);
 				$this->image_lib->resize();
 				$this->image_lib->clear();
+
 
 				if ($mode === $modes[1] && ($crop_width !== null && $crop_height !== null))
 				{

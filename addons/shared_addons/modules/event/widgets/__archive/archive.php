@@ -17,7 +17,7 @@ class Widget_Archive extends Widgets
 	public $version = '1.0.0';
 
 	public $title = array(
-		'en' => 'Articles - Archive',
+		'en' => 'Events - Archive',
 		'br' => 'Arquivo do Event',
             'fa' => 'آرشیو',
 		'pt' => 'Arquivo do Event',

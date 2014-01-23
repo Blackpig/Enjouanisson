@@ -92,7 +92,7 @@ return $info;
 		$strip_tags = $this->attribute('strip_tags',1);
 		$add_ellipsis = $this->attribute('add_ellipsis','true');
 
-		$text = ($strip_tags) ? strip_tags($text) : $text;
+		$text = ($strip_tags) ? strip_tags($text, "<b><i><em><strong><p><br><br/>") : $text;
 		$ellipsis = ($add_ellipsis) ? "&#8230;" : "";
 
 		$this->load->helper('text');

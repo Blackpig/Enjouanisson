@@ -2,7 +2,7 @@
 {{ if posts }}
 	{{ blog:posts limit="1"}}
 		<article class="blog large-12">
-			<h2>{{ title }}{{ id }}</h2>
+			<h2>{{ title }}</h2>
 			<p class="meta">Published on {{ helper:date timestamp=created_on }} </p>
 			<figure>
 				{{ image:img }}
@@ -24,19 +24,27 @@
 	<h2><a href="{{ url }}">{{ title }}</a></h2>
 	<p>Published on {{ helper:date timestamp=created_on }}</p>
 	<div class="row">
-	<div class="large-3 columns">
-		<figure>
-			<a href="{{ photo:image }}" class="fancybox"><img src="{{ photo:image }}" alt="{{title}}" class="top"/></a>
-			<figcaption>
-				Image: {{ image_credit }}
-			</figcaption>
-		</figure>
-	</div>
-	<div class="large-9 columns">
-		<p>{{ preview }}</p>
+	{{ if {image} == "" }}
+		<div class="large-12 columns">
+			<p>{{ preview }}</p>
 		<a href="{{ url }}" class="more">Read more</a>
+		</div>
+
+	{{ else }}
+		<div class="large-3 columns">
+			<figure>
+				<a href="{{ image:image }}" class="fancybox"><img src="{{ image:image }}/0/200" alt="{{title}}" class="top"/></a>
+				<figcaption>
+					Image: {{ image_credit }}
+				</figcaption>
+			</figure>
+		</div>
+		<div class="large-9 columns">
+			<p>{{ preview }}</p>
+			<a href="{{ url }}" class="more">Read more</a>
+		</div>
+	{{ endif }}
 	</div>
-</div>
 </article>
 	{{ /blog:posts }}
 

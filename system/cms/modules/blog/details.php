@@ -14,7 +14,7 @@ class Module_Blog extends Module
 	{
 		$info = array(
 			'name' => array(
-				'en' => 'Blog',
+				'en' => 'Articles',
 				'ar' => 'المدوّنة',
 				'br' => 'Blog',
 				'pt' => 'Blog',

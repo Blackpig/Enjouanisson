@@ -4,8 +4,8 @@ class Theme_Lbpl extends Theme {
 
     public $name			= 'Enjouanisson';
     public $author			= 'Black Pig Design';
-    public $author_website	= 'http://blackpig.eu/';
-    public $website			= 'http://enjouanisson.fr/';
+    public $author_website	= 'http://blackpig.eu';
+    public $website			= 'http://www.enjouanisson.fr';
     public $description		= 'Bespoke site design for Enjouanisson using Foundation 4';
     public $version			= '1.0.0';
 	public $options 		= array('show_breadcrumbs' => 	array('title' 		=> 'Show Breadcrumbs',

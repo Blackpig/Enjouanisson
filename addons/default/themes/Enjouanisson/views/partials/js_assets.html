@@ -1,11 +1,15 @@
 <!-- Begin scripts -->
-{{ theme:js file="jquery/jquery.js" }}
-{{ theme:js file="foundation/foundation.min.js" }}
+<script src="//code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+{{ theme:js file="foundation/foundation.js" }}
 {{ theme:js file="foundation/foundation.topbar.js" }}
-{{ theme:js file="fancybox/jquery.fancybox.pack.js" }}
+{{ theme:js file="foundation/foundation.reveal.js" }}
+{{ theme:js file="foundation/foundation.orbit.js" }}
+{{ theme:js file="fancybox/jquery.fancybox.js" }}
 
 <script>
+$(document).ready(function(){
 	$(document).foundation();
 	$(".fancybox").fancybox();
+	})
 </script>
 <!-- End scripts -->

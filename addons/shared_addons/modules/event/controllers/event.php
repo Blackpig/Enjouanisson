@@ -62,7 +62,7 @@ class Event extends Public_Controller
 			'limit'			=> Settings::get('records_per_page'),
 			'where'			=> "`status` = 'live'",
 			'paginate'		=> 'yes',
-			'pag_base'		=> site_url('article/page'),
+			'pag_base'		=> site_url('event/page'),
 			'pag_segment'   => 3
 		));
 
@@ -245,7 +245,7 @@ class Event extends Public_Controller
 
 		if ($post['status'] === 'live')
 		{
-			redirect('event/'.date('Y/m', $post['created_on']).'/'.$post['slug']);
+			redirect('event/'.$post['slug']);
 		}
 
 		// Set index nofollow to attempt to avoid search engine indexing
@@ -345,7 +345,7 @@ class Event extends Public_Controller
 		$post['keywords_arr'] = $keywords_arr;
 
 		// Full URL for convenience.
-		$post['url'] = site_url('articles/'.date('Y/m', $post['created_on']).'/'.$post['slug']);
+		$post['url'] = site_url('event/'.$post['slug']);
 	
 		// What is the preview? If there is a field called intro,
 		// we will use that, otherwise we will cut down the event post itself.
@@ -421,7 +421,7 @@ class Event extends Public_Controller
 				$this->template->set_breadcrumb($category['title'], 'event/category/'.$category['slug']);
 
 				// Set category OG metadata			
-				$this->template->set_metadata('article:section', $category['title'], 'og');
+				$this->template->set_metadata('event:section', $category['title'], 'og');
 
 				// Add to $post
 				$post['category'] = $category;
@@ -433,7 +433,7 @@ class Event extends Public_Controller
 		// Add in OG keywords
 		foreach ($post['keywords_arr'] as $keyword)
 		{
-			$this->template->set_metadata('article:tag', $keyword, 'og');
+			$this->template->set_metadata('event:tag', $keyword, 'og');
 		}
 
 		// If comments are enabled, go fetch them all
@@ -457,13 +457,13 @@ class Event extends Public_Controller
 
 		$this->template
 			->title($post['title'], lang('event:event_title'))
-			->set_metadata('og:type', 'article', 'og')
+			->set_metadata('og:type', 'event', 'og')
 			->set_metadata('og:url', current_url(), 'og')
 			->set_metadata('og:title', $post['title'], 'og')
 			->set_metadata('og:site_name', Settings::get('site_name'), 'og')
 			->set_metadata('og:description', $post['preview'], 'og')
-			->set_metadata('article:published_time', date(DATE_ISO8601, $post['created_on']), 'og')
-			->set_metadata('article:modified_time', date(DATE_ISO8601, $post['updated_on']), 'og')
+			->set_metadata('event:published_time', date(DATE_ISO8601, $post['created_on']), 'og')
+			->set_metadata('event:modified_time', date(DATE_ISO8601, $post['updated_on']), 'og')
 			->set_metadata('description', $post['preview'])
 			->set_metadata('keywords', implode(', ', $post['keywords_arr']))
 			->set_breadcrumb($post['title'])

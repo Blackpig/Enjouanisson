@@ -1,0 +1,16 @@
+div.tagsinput{border:1px
+solid #CCC;background:#FFF;padding:5px;width:300px;height:100px;overflow-y:auto}div.tagsinput
+span.tag{border:1px
+solid #AAA;-moz-border-radius:2px;-webkit-border-radius:2px;display:block;float:left;padding:5px;text-decoration:none;background:#EEE;color:#808080;margin-right:5px;margin-bottom:5px;font-family:helvetica;font-size:13px}div.tagsinput span.tag
+a{font-weight:bold;color:#808080;text-decoration:none;font-size:11px}div.tagsinput
+input{width:80px;margin:0px;font-family:helvetica;font-size:13px;border:1px
+solid transparent;padding:5px;background:transparent;color:#000;outline:0px;margin-right:5px;margin-bottom:5px}div.tagsinput
+div{display:block;float:left}.tags_clear{clear:both;width:100%;height:0px}.not_valid{background:#FBD8DB !important;color:#90111A !important}
+.page-chunk>span{margin-top:8px}.page-chunk
+.btn{padding:4px
+7px;float:left}.page-chunk
+input.label{padding:5px
+8px !important}.page-chunk
+.input{margin-bottom:10px}span.sort-handle{width:21px;height:19px;background:url("/system/cms/modules/pages/img/sort-handle.png") no-repeat;float:right;cursor:move;margin:5px
+0 0 5px}.sort-placeholder{background-color:#eee;border:1px
+solid #DCDCDC;-webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px;border-radius:4px}#slug.disabled{opacity:0.5}

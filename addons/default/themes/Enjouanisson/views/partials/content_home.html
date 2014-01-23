@@ -1,14 +1,14 @@
-		<article class="row">
+			<div class="row">
 			{{ template:body }}
-		</article>
+			</div>
 		<div class="row">
 			<section class="large-4 columns">
 				<h2>Recent Articles</h2>
 				{{ widgets:instance id="18"}}
 			</section>
 			<section class="large-4 columns">
-				<h2>Featured Recipe</h2>
-				{{ widgets:instance id="22"}}
+				<h2>What our clients say</h2>				
+				{{ widgets:instance id="29"}}
 			</section>
 			<section class="large-4 columns">
 				<h2>What are we doing?</h2>				
@@ -16,6 +16,16 @@
 			</section>
 		</div>
 		<div class="row">
-			<h2>Our Products</h2>
-				{{ widgets:area slug="homepage-products" }}
+			<div class="large-12 columns">
+				<h2>Featured recipe</h2>
+				{{ widgets:instance id="22"}}
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-12 columns">
+				<h2>Our Products</h2>
+				<div class="row">
+					{{ widgets:area slug="homepage-products" }}
+				</div>
+			</div>
 		</div>

@@ -1,61 +1,30 @@
-
 {{ post }}
-
-<div class="post">
-
-	<h3>{{ title }}</h3>
-
-	<div class="meta">
-
-		<div class="date">
-			{{ helper:lang line="event:posted_label" }}
-			<span>{{ helper:date timestamp=created_on }}</span>
+	<article class="blog row">
+		<h1>{{ title }}</h1>
+		<div class="row ">
+			<div class="large-5 columns">
+				<figure>
+					<a href="{{ featured_image:image }}" class="fancybox"><img src="{{ featured_image:thumb }}/0/250" /></a> 
+				</figure>
+			</div>
+			<div id="event_specs" class="large-7 columns">
+				<dl>
+					<dt>What:</dt>
+					<dd>{{ preview }}</dd>
+					<dt>Where:</dt>
+					<dd>{{ location }}</dd>
+					<dt>When:</dt>
+					<dd>{{ helper:date format="jS F" timestamp=start_date }} at {{ helper:date format="h:i a" timestamp=start_date }}</dd>
+							{{ if {helper:date format="Ymdhi" timestamp=start_date}  ==  {helper:date format="Ymdhi" timestamp=end_date} }}
+						{{ endif }}
+				</dl>
 		</div>
+		<div class="row">
+			<div class="large-12 columns">
+				<p>{{ body }}</p>
+			</div>
+		</div>		
+	</article>
 
-		<div class="author">
-			{{ helper:lang line="event:written_by_label" }}
-			<span><a href="{{ url:site }}user/{{ created_by:user_id }}">{{ created_by:display_name }}</a></span>
-		</div>
-
-		{{ if category }}
-		<div class="category">
-			{{ helper:lang line="event:category_label" }}
-			<span><a href="{{ url:site }}event/category/{{ category:slug }}">{{ category:title }}</a></span>
-		</div>
-		{{ endif }}
-
-		{{ if keywords }}
-		<div class="keywords">
-			{{ keywords }}
-				<span><a href="{{ url:site }}event/tagged/{{ keyword }}">{{ keyword }}</a></span>
-			{{ /keywords }}
-		</div>
-		{{ endif }}
-
-	</div>
-
-	<div class="body">
-		{{ body }}
-	</div>
-
-</div>
 
 {{ /post }}
-
-<?php if (Settings::get('enable_comments')): ?>
-
-<div id="comments">
-
-	<div id="existing-comments">
-		<h4><?php echo lang('comments:title') ?></h4>
-		<?php echo $this->comments->display() ?>
-	</div>
-
-	<?php if ($form_display): ?>
-		<?php echo $this->comments->form() ?>
-	<?php else: ?>
-	<?php echo sprintf(lang('event:disabled_after'), strtolower(lang('global:duration:'.str_replace(' ', '-', $post[0]['comments_enabled'])))) ?>
-	<?php endif ?>
-</div>
-
-<?php endif ?>
